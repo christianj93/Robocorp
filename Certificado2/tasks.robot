@@ -75,7 +75,7 @@ Go to order another robot
 Create a ZIP file of the receipts
     Close Browser
     ${input_test}=    Input Filename
-    ${zip_file_name}=    Set Variable    ${OUTPUT_DIR}${/}PDFs.zip
+    ${zip_file_name}=    Set Variable    ${OUTPUT_DIR}${/}${input_test}.zip
     Archive Folder With Zip    ${OUTPUT_DIR}${/}receipts    ${zip_file_name}
 
 Input Filename
@@ -86,7 +86,6 @@ Input Filename
 
 *** Tasks ***
 Order robots from RobotSpareBin Industries Inc
-    Input Filename
     ${url}=    Get Secret    url
     Open the robot order website    ${url}[web]
     ${orders}=    Get orders    ${url}[csv]
